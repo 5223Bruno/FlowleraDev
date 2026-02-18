@@ -1,0 +1,30 @@
+# Robots.txt para FLOWERADEV
+# Instruções para Google, Bing e outros buscadores
+
+# Regras para todos os buscadores
+User-agent: *
+
+# Permitir rastreamento de todas as páginas públicas
+Allow: /
+
+# Permitir rastreamento de arquivos estáticos
+Allow: /images/
+Allow: /videos/
+Allow: /css/
+Allow: /js/
+
+# Indicar a localização do sitemap
+Sitemap: https://floweradev.com/sitemap.xml
+
+# Velocidade de rastreamento (opcional)
+# Crawl-delay: 1
+
+# Regras específicas para Googlebot (opcional)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Regras específicas para Bingbot (opcional)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
