@@ -11,6 +11,11 @@ interface MainLayoutProps {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
+  // Função reutilizável para abrir o WhatsApp
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/556999967607?text=Olá! Vi seu portfólio e gostaria de saber mais.', '_blank' );
+  };
+
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background text-foreground font-body">
       {/* Sidebar Fixa - Cartão de Visita */}
@@ -56,22 +61,27 @@ export function MainLayout({ children }: MainLayoutProps) {
           </div>
         </div>
 
-        <div className="flex gap-4 pt-8 relative z-10">
-          <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 button-smooth">
-            <Linkedin className="w-5 h-5" />
-          </Button>
-          <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 button-smooth">
-            <Github className="w-5 h-5" />
-          </Button>
-          <Button className="flex-1 rounded-full font-heading tracking-wider text-lg button-smooth">
-            FALE COMIGO
-          </Button>
-        </div>
-        
-        <div className="pt-4 text-center">
-          <Link href="/dashboard" className="text-xs text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">
-            Acessar Dashboard
-          </Link>
+        <div className="space-y-6 relative z-10">
+          <div className="flex gap-4">
+            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 button-smooth">
+              <Linkedin className="w-5 h-5" />
+            </Button>
+            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 button-smooth">
+              <Github className="w-5 h-5" />
+            </Button>
+            <Button 
+              className="flex-1 rounded-full font-heading tracking-wider text-lg button-smooth"
+              onClick={handleWhatsAppClick}
+            >
+              FALE COMIGO
+            </Button>
+          </div>
+          
+          <div className="text-center">
+            <Link href="/dashboard" className="text-xs text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">
+              Acessar Dashboard
+            </Link>
+          </div>
         </div>
       </aside>
 
@@ -90,7 +100,7 @@ export function MainLayout({ children }: MainLayoutProps) {
               <p className="text-xs text-muted-foreground">Web Developer</p>
             </div>
           </div>
-          <Button size="sm">Contato</Button>
+          <Button size="sm" onClick={handleWhatsAppClick}>Contato</Button>
         </div>
 
         <ScrollArea className="h-full w-full">
