@@ -13,7 +13,7 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
   // Função reutilizável para abrir o WhatsApp
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/556999967607?text=Olá! Vi seu portfólio e gostaria de saber mais.', '_blank' );
+    window.open('https://wa.me/5569999676075?text=Olá! Vi seu portfólio e gostaria de saber mais.', '_blank' );
   };
 
   return (
